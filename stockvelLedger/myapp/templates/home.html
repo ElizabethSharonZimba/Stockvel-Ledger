@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>StokvelLedger</title>
+  <style>
+    /* General Styles */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      color: #333;
+    }
+
+    header {
+      background: #333;
+      color: #fff;
+      padding: 10px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    header .logo {
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    header nav ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin: 10px 0;
+    }
+
+    header nav ul li a {
+      color: #fff;
+      text-decoration: none;
+    }
+
+    header .cta {
+      background: #ff6600;
+      color: #fff;
+      padding: 10px 20px;
+      text-decoration: none;
+      border-radius: 5px;
+      margin: 10px 0;
+    }
+
+    .form-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 50px;
+      background: #f5f5f5;
+    }
+
+    form {
+      max-width: 400px;
+      width: 100%;
+      background: #fff;
+      padding: 20px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      border-radius: 5px;
+    }
+
+    form h2 {
+      margin-top: 0;
+    }
+
+    form label {
+      display: block;
+      margin: 10px 0 5px;
+    }
+
+    form input {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    form button {
+      width: 100%;
+      padding: 10px;
+      background: #ff6600;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    form p {
+      margin: 10px 0 0;
+      text-align: center;
+    }
+
+    form p a {
+      color: #ff6600;
+      text-decoration: none;
+    }
+
+    .hero {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 50px;
+      background: #f5f5f5;
+      flex-wrap: wrap;
+    }
+
+    .hero-content {
+      max-width: 600px;
+      flex: 1;
+    }
+
+    .hero h1 {
+      font-size: 48px;
+      margin: 0;
+    }
+
+    .hero p {
+      font-size: 24px;
+      margin: 20px 0;
+    }
+
+    .hero .cta {
+      background: #ff6600;
+      color: #fff;
+      padding: 10px 20px;
+      text-decoration: none;
+      border-radius: 5px;
+    }
+
+    .hero-image {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 20px;
+    }
+
+    .hero-image img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    .features,
+    .how-it-works,
+    .testimonials,
+    .faq,
+    .contact,
+    .bottom-cta {
+      padding: 50px;
+      text-align: center;
+    }
+
+    .features h2,
+    .how-it-works h2,
+    .testimonials h2,
+    .faq h2,
+    .contact h2 {
+      font-size: 36px;
+      margin-bottom: 20px;
+    }
+
+    .feature,
+    .step,
+    .testimonial,
+    .faq-item {
+      margin-bottom: 20px;
+    }
+
+    .feature img,
+    .step img {
+      max-width: 100px;
+    }
+
+    .feature h3,
+    .step h3 {
+      font-size: 24px;
+    }
+
+    .contact .social-media a img {
+      max-width: 50px;
+      margin: 0 10px;
+    }
+
+    footer {
+      background: #333;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+    }
+
+    footer ul {
+      list-style: none;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    footer ul li a {
+      color: #fff;
+      text-decoration: none;
+    }
+
+    .bottom-cta {
+      background: #ff6600;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+    }
+
+    /* Media Queries for Responsiveness */
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+      }
+
+      header nav ul {
+        justify-content: center;
+        flex-direction: column;
+      }
+
+      .hero {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .hero h1 {
+        font-size: 36px;
+      }
+
+      .hero p {
+        font-size: 18px;
+      }
+
+      .features, .how-it-works, .testimonials, .faq, .contact, .bottom-cta {
+        padding: 30px;
+      }
+
+      .features h2, .how-it-works h2, .testimonials h2, .faq h2, .contact h2 {
+        font-size: 28px;
+      }
+
+      .feature img, .step img {
+        max-width: 80px;
+      }
+
+      .feature h3, .step h3 {
+        font-size: 20px;
+      }
+
+      footer ul {
+        flex-direction: column;
+        gap: 10px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero h1 {
+        font-size: 28px;
+      }
+
+      .hero p {
+        font-size: 16px;
+      }
+
+      .hero .cta {
+        padding: 8px 16px;
+      }
+
+      .features h2, .how-it-works h2, .testimonials h2, .faq h2, .contact h2 {
+        font-size: 24px;
+      }
+
+      .feature img, .step img {
+        max-width: 60px;
+      }
+
+      .feature h3, .step h3 {
+        font-size: 18px;
+      }
+      .contact .social-media a img {
+        max-width: 40px;
+      }
+
+      .bottom-cta h2 {
+        font-size: 24px;
+      }
+
+      .bottom-cta .cta {
+        padding: 10px 20px;
+      }
+.topnav{
+  display: flex;  
+  justify-content: space-between;
+  margin: 0 auto;
+}
+    }
+  </style>
+</head>
+<body>
+  <!-- Header Section -->
+  <header>
+    <nav class="topnav">
+      <div class="logo">StokvelLedger</div>
+      <ul>
+        <li><a href="#features">Features</a></li>
+        <li><a href="#how-it-works">How It Works</a></li>
+        <li><a href="#testimonials">Testimonials</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <a href="#signup" class="cta">Get Started for Free</a>
+    </nav>
+  </header>
+
+  <!-- Sign-in Form
+  <div id="signin" class="form-container">
+    <form id="signin-form">
+      <h2>Sign In</h2>
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required>
+      <br>
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" required>
+      <br>
+      <button type="submit">Sign In</button>
+      <p>Don't have an account? <a href="#signup">Sign Up</a></p>
+    </form>
+  </div>
+
+   Sign-up Form 
+  <div id="signup" class="form-container">
+    <form id="signup-form">
+      <h2>Sign Up</h2>
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required>
+      <br>
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required>
+      <br>
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" required>
+      <br>
+      <label for="confirm-password">Confirm Password:</label>
+      <input type="password" id="confirm-password" name="confirm-password" required>
+      <br>
+      <button type="submit" >Sign Up</button>
+      <p>Already have an account? <a href="#signin">Sign In</a></p>
+    </form>
+  </div> -->
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Revolutionize Your Stokvel with Blockchain Technology</h1>
+      <p>Secure, Transparent, and Efficient Stokvel Management</p>
+      <a href="#signup" class="cta">Get Started for Free</a>
+    </div>
+    <div class="hero-image">
+      <img src="https://assets.isu.pub/document-structure/210519085454-3c51724e3b3a4338ab94f440e1240fca/v1/e3a49f8effa1017474d9e32be13ea4b8.jpeg" alt="Community">
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section id="features" class="features">
+    <h2>Features</h2>
+    <div class="feature">
+      <img src="https://static.vecteezy.com/system/resources/previews/044/822/470/non_2x/trendy-blockchain-security-vector.jpg" alt="Secure">
+      <h3>Secure and Immutable Ledger</h3>
+      <p>Ensure the safety and integrity of your stokvel's funds with blockchain's secure and tamper-proof technology.</p>
+    </div>
+    <div class="feature">
+      <img src="https://thumbs.dreamstime.com/z/big-data-blockchain-concept-blockchain-digital-illuminated-shape-transparent-glass-blocks-boxes-combines-golden-big-one-big-102859874.jpg" alt="Transparent">
+      <h3>Transparent Transactions</h3>
+      <p>Every transaction is recorded and visible to all members, fostering trust and accountability.</p>
+    </div>
+    <!-- Add more features as needed -->
+  </section>
+
+  <!-- How It Works Section -->
+  <section id="how-it-works" class="how-it-works">
+    <h2>How It Works</h2>
+    <div class="step">
+      <img src="https://static.vecteezy.com/system/resources/previews/021/919/677/small/login-icon-in-trendy-flat-style-isolated-on-white-background-approach-symbol-for-your-web-site-design-logo-app-ui-illustration-eps10-flat-style-for-graphic-design-vector.jpg" alt="Create">
+      <h3>Create Your Stokvel</h3>
+      <p>Sign up and set up your stokvel in minutes.</p>
+    </div>
+    <div class="step">
+      <img src="https://peoplestokvel.co.za/wp-content/uploads/2018/06/The-Peoples-fundnowords.png" alt="Invite">
+      <h3>Invite Members</h3>
+      <p>Easily invite friends, family, or community members to join.</p>
+    </div>
+    <!-- Add more steps as needed -->
+  </section>
+
+  <!-- Testimonials Section -->
+  <section id="testimonials" class="testimonials">
+    <h2>Testimonials</h2>
+    <div class="testimonial">
+      <p>"This app has transformed our stokvel. It's easy to use, and we all love the transparency!"</p>
+      <p>- Koena Ramalepe, Stokvel Member</p>
+    </div>
+    <div class="testimonial">
+      <p>"Managing our funds has never been this secure and efficient. Highly recommend!"</p>
+      <p>- Lesego Boase, Stokvel Treasurer</p>
+    </div>
+    <!-- Add more testimonials as needed -->
+  </section>
+
+  <!-- FAQ Section -->
+  <section id="faq" class="faq">
+    <h2>FAQ</h2>
+    <div class="faq-item">
+      <h3>What is a blockchain ledger?</h3>
+      <p>A blockchain ledger is a digital record of transactions that is secure, transparent, and immutable.</p>
+    </div>
+    <div class="faq-item">
+      <h3>How does the app ensure security?</h3>
+      <p>Our app uses advanced encryption and blockchain technology to protect your data and funds.</p>
+    </div>
+    <!-- Add more FAQs as needed -->
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="contact">
+    <h2>Contact Us</h2>
+    <p>Email: support@stokvelledger.com</p>
+    <p>Phone: +123 456 7890</p>
+    <div class="social-media">
+      <a href="#"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSy2uiXmKQd7Ga2ifqGb5ov2edGVIhDUpUGGw&s" alt="Facebook"></a>
+      <a href="#"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRCyX5u3eOAf9Lz66k8muHLqyzmIJNOZ0VkhM5zmD5jp4gbX0BonL5qUP76mZu0sE23QIU&usqp=CAU" alt="Twitter"></a>
+      <a href="#"><img src="https://admin.jet.org.za/contact/color-of-the-linkedin-logo-1.jpg/@@images/image.jpeg" alt="LinkedIn"></a>
+    </div>
+  </section>
+
+
+  <!-- Sign-in Form -->
+  <div id="signin" class="form-container">
+    <form id="signin-form">
+      <h2>Sign In</h2>
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required>
+      <br>
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" required>
+      <br>
+      <button type="submit">Sign In</button>
+      <p>Don't have an account? <a href="#signup">Sign Up</a></p>
+    </form>
+  </div>
+
+  <!-- Sign-up Form -->
+  <div id="signup" class="form-container">
+    <form id="signup-form">
+      <h2>Sign Up</h2>
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required>
+      <br>
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required>
+      <br>
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" required>
+      <br>
+      <label for="confirm-password">Confirm Password:</label>
+      <input type="password" id="confirm-password" name="confirm-password" required>
+      <br>
+      <button type="submit" >Sign Up</button>
+      <p>Already have an account? <a href="#signin">Sign In</a></p>
+    </form>
+  </div>
+
+
+  <!-- Footer Section -->
+  <footer>
+    <p>&copy; 2024 StokvelLedger. All rights reserved.</p>
+    <ul>
+      <li><a href="#terms">Terms of Service</a></li>
+      <li><a href="#privacy">Privacy Policy</a></li>
+      <li><a href="#contact">Contact Us</a></li>
+    </ul>
+  </footer>
+
+  <!-- Bottom Call to Action -->
+  <section class="bottom-cta">
+    <h2>Join the Future of Stokvel Management Today!</h2>
+    <a href="./signup.html" class="cta">Get Started for Free</a>
+  </section>
+
+  <script src="js/scripts.js"></script>
+</body>
+</html>

@@ -1,0 +1,141 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    background-image: url("images/anotherone.jpeg");
+  
+  }
+  
+  header {
+    background: #333;
+    color: #fff;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  header .logo {
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  header nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+  }
+  
+  header nav ul li a {
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  header .cta {
+    background: #ff6600;
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+  }
+  
+  .hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 50px;
+    background: #f5f5f5;
+  }
+  
+  .hero-content {
+    max-width: 600px;
+  }
+  
+  .hero h1 {
+    font-size: 48px;
+    margin: 0;
+  }
+  
+  .hero p {
+    font-size: 24px;
+    margin: 20px 0;
+  }
+  
+  .hero .cta {
+    background: #ff6600;
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+  }
+  
+  .features,
+  .how-it-works,
+  .testimonials,
+  .faq,
+  .contact,
+  .bottom-cta {
+    padding: 50px;
+    text-align: center;
+  }
+  
+  .features h2,
+  .how-it-works h2,
+  .testimonials h2,
+  .faq h2,
+  .contact h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+  }
+  
+  .feature,
+  .step,
+  .testimonial,
+  .faq-item {
+    margin-bottom: 20px;
+  }
+  
+  .feature img,
+  .step img {
+    max-width: 100px;
+  }
+  
+  .feature h3,
+  .step h3 {
+    font-size: 24px;
+  }
+  
+  .contact .social-media a img {
+    max-width: 50px;
+    margin: 0 10px;
+  }
+  
+  footer {
+    background: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  footer ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  footer ul li a {
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  .bottom-cta {
+    background: #ff6600;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+  }
+  
